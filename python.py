@@ -2,10 +2,8 @@ from subprocess import Popen, PIPE
 from os import path
 
 def run_git_command(command):
-    git_command = ['/usr/bin/git', command]
-    repo = path.dirname('/var/www/html/biznet/')
+    
     repo = path.dirname('/home/goku/Goku/WorkingPlace/Javascript/')
-
     git_query = Popen(command.split(), cwd=repo, stdout=PIPE, stderr=PIPE)
     (git_status, error) = git_query.communicate()
 
